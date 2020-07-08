@@ -1,6 +1,10 @@
-# todo
+# TODO List Vue.js App
 
-## Project setup
+This is a simple Todo List app created with [Vue.js](http://vuejs.org).
+
+## How to run this project? 🤔
+
+### Project setup
 ```
 npm install
 ```
@@ -19,6 +23,11 @@ npm run build
 ```
 npm run lint
 ```
+## 💻 Technologies
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [x] Javascript;
+- [x] Vue.js
+
+
+Make with ❤️ by [Kelvyn Santana](http://linkedin.com/in/kelvynsantana)
+

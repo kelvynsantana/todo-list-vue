@@ -26,7 +26,8 @@ npm run lint
 ## 💻 Technologies
 
 - [x] Javascript;
-- [x] Vue.js
+- [x] [Vue.js](https://vuejs.org);
+- [x] [Spectre.css](https://picturepan2.github.io/spectre);
 
 
 Make with ❤️ by [Kelvyn Santana](http://linkedin.com/in/kelvynsantana)

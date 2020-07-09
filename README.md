@@ -2,6 +2,9 @@
 
 This is a simple Todo List app created with [Vue.js](http://vuejs.org).
 
+
+![App Screenshot](src/assets/screenshot.png)
+
 ## How to run this project? 🤔
 
 ### Project setup

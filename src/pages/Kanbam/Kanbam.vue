@@ -5,7 +5,7 @@
         <div class="panel">
           <div class="panel-header">
             <div class="panel-title">
-              <strong>A fazer</strong>
+              <strong class="label label-rounded label-primary">Tarefas pendentes</strong>
             </div>
           </div>
 
@@ -19,7 +19,9 @@
             />
           </div>
           <div class="panel-footer">
-            <!-- buttons or inputs -->
+            <button v-if="uncheckeds.length > 0" class="btn btn-link float-rigth" @click="checkAll">
+              <i class="icon icon-check text-success" />
+            </button>
           </div>
         </div>
       </div>
@@ -28,7 +30,7 @@
         <div class="panel">
           <div class="panel-header">
             <div class="panel-title">
-              <strong>Feito</strong>
+              <strong class="label label-rounded label-success">Tarefas Concluídas</strong>
             </div>
           </div>
 
@@ -42,7 +44,16 @@
             />
           </div>
           <div class="panel-footer">
-            <!-- buttons or inputs -->
+            <button v-if="checkeds.length > 0" class="btn btn-link float-rigth" @click="uncheckAll">
+              <i class="icon icon-time" />
+            </button>
+            <button
+              v-if="checkeds.length > 0"
+              class="btn btn-link float-left text-error"
+              @click="removeAllCheckeds"
+            >
+              <i class="icon icon-delete" />
+            </button>
           </div>
         </div>
       </div>
@@ -62,7 +73,7 @@ export default {
     ...mapGetters(['uncheckeds', 'checkeds']),
   },
   methods: {
-    ...mapActions(['toggleTask', 'removeTask']),
+    ...mapActions(['toggleTask', 'removeTask', 'checkAll', 'uncheckAll', 'removeAllCheckeds']),
   },
 };
 </script>
@@ -71,6 +82,7 @@ export default {
 .container-board {
   height: 90vh;
   padding: 10px;
+  margin-top: 24px;
 }
 
 .columns {

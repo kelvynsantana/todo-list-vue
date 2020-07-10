@@ -6,7 +6,9 @@
         <router-link to="/kanbam" class="btn btn-link">Kanbam View</router-link>
       </section>
       <section class="navbar-center">
-        <img class="img-responsive logo" src="@/assets/logo.svg" alt="Logo" />
+        <router-link to="/" class="btn btn-link">
+          <img class="img-responsive logo" src="@/assets/logo.svg" alt="Logo" />
+        </router-link>
       </section>
       <section class="navbar-section">
         <a href="http://twitter.com/okelvynsantana" class="btn btn-link">Twitter</a>

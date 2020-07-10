@@ -8,7 +8,7 @@
           v-model="task.description"
           placeholder="O que você precisa fazer?"
         />
-        <button type="submit" class="btn btn-primary input-group-btn">
+        <button type="submit" class="btn btn-primary input-group-btn" :class="{ loading }">
           Adicionar
         </button>
       </div>
@@ -18,7 +18,7 @@
         v-for="task in tasks"
         :key="task.id"
         @toggle="toggleTask"
-        @remove="handleRemoveTask"
+        @remove="removeTask"
         :task="task"
       />
     </div>
@@ -26,6 +26,7 @@
 </template>
 <script>
 import TaskList from '@/components/Tasks/TaskList.vue';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -33,28 +34,16 @@ export default {
     TaskList,
   },
   data() {
-    return {
-      tasks: [],
-      task: { done: false },
-    };
+    return { task: { done: false } };
+  },
+  computed: {
+    ...mapState(['tasks', 'loading']),
   },
   methods: {
-    handleAddTask(task) {
-      if (task.description.length <= 0) return;
-      task.id = Date.now();
-      this.tasks.push(task);
+    ...mapActions(['addTask', 'toggleTask', 'removeTask']),
+    async handleAddTask(task) {
+      await this.addTask(task);
       this.task = { done: false };
-    },
-    toggleTask(task) {
-      const index = this.tasks.findIndex(item => item.id === task.id);
-      if (index > -1) {
-        const checked = !this.tasks[index].done;
-        this.$set(this.tasks, index, { ...this.tasks[index], done: checked });
-      }
-    },
-    handleRemoveTask(task) {
-      const index = this.tasks.findIndex(item => item.id === task.id);
-      this.$delete(this.tasks, index);
     },
   },
 };

@@ -2,8 +2,8 @@
   <div class="container grid-lg">
     <header class="navbar">
       <section class="navbar-section">
-        <router-link to="/" class="btn btn-link">Home</router-link>
-        <router-link to="/kanbam" class="btn btn-link">Kanbam</router-link>
+        <router-link to="/" class="btn btn-link">List View</router-link>
+        <router-link to="/kanbam" class="btn btn-link">Kanbam View</router-link>
       </section>
       <section class="navbar-center">
         <img class="img-responsive logo" src="@/assets/logo.svg" alt="Logo" />
@@ -21,6 +21,9 @@ export default {};
 </script>
 
 <style scoped>
+body {
+  height: 50px;
+}
 .logo {
   max-width: 150px;
 }

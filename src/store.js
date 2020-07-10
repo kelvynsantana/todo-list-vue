@@ -25,6 +25,15 @@ const actions = {
   },
 };
 
+const getters = {
+  uncheckeds(state) {
+    return state.tasks.filter(task => !task.done);
+  },
+  checkeds(state) {
+    return state.tasks.filter(task => task.done);
+  },
+};
+
 const mutations = {
   addTask(state, task) {
     state.tasks.push(task);
@@ -50,6 +59,7 @@ const store = new Vuex.Store({
   state,
   actions,
   mutations,
+  getters,
 });
 
 export default store;

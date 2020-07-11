@@ -9,22 +9,28 @@ This is a simple Todo List app created with [Vue.js](http://vuejs.org).
 
 ### Project setup
 ```
-npm install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn serve
+```
+
+### To run in docker container user
+
+```
+yarn serve:docker
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn build
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+yarn lint
 ```
 ## 💻 Technologies
 
